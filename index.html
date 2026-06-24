@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scriptdle</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Scriptdle</h1>
+      <p class="subtitle">Guess the condition from a prescription list.</p>
+
+      <section class="panel" aria-label="Current prescription">
+        <div class="panel-header">
+          <h2>Today's Prescription</h2>
+          <button id="practice-button" type="button">Practice Round</button>
+        </div>
+        <ul id="medication-list" class="medication-list"></ul>
+      </section>
+
+      <section class="panel" aria-label="Guess input">
+        <form id="guess-form" autocomplete="off">
+          <label for="guess-input">Your diagnosis guess</label>
+          <div class="guess-row">
+            <input
+              id="guess-input"
+              name="guess"
+              type="text"
+              placeholder="Example: Hypertension"
+              required
+            />
+            <button type="submit">Guess</button>
+          </div>
+        </form>
+        <p id="status" class="status" aria-live="polite"></p>
+      </section>
+
+      <section class="panel" aria-label="Guess history">
+        <h2>Guesses</h2>
+        <ul id="guess-history" class="guess-history"></ul>
+      </section>
+
+      <section class="panel" aria-label="How to edit">
+        <h2>Customize</h2>
+        <p>
+          Edit <code>data.js</code> to add your own cases, medication names, doses, and aliases.
+        </p>
+      </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

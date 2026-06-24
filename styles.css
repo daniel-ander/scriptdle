@@ -1,0 +1,119 @@
+:root {
+  color-scheme: light dark;
+  --bg: #111827;
+  --panel: #1f2937;
+  --text: #f9fafb;
+  --muted: #cbd5e1;
+  --accent: #34d399;
+  --bad: #f87171;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at top, #1e293b, var(--bg));
+  color: var(--text);
+}
+
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  color: var(--muted);
+}
+
+.panel {
+  margin-top: 1rem;
+  background: color-mix(in oklab, var(--panel), black 10%);
+  border: 1px solid color-mix(in oklab, var(--panel), white 14%);
+  border-radius: 0.8rem;
+  padding: 1rem;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.medication-list,
+.guess-history {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.medication-item,
+.guess-item {
+  background: color-mix(in oklab, var(--panel), white 8%);
+  border-radius: 0.5rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid color-mix(in oklab, var(--panel), white 20%);
+}
+
+.guess-item.correct {
+  border-color: var(--accent);
+}
+
+.guess-item.incorrect {
+  border-color: var(--bad);
+}
+
+.guess-row {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+input,
+button {
+  border-radius: 0.5rem;
+  border: 1px solid #4b5563;
+  padding: 0.65rem 0.75rem;
+  font-size: 1rem;
+}
+
+input {
+  flex: 1;
+  background: #111827;
+  color: var(--text);
+}
+
+button {
+  cursor: pointer;
+  border-color: #2dd4bf;
+  background: #0f766e;
+  color: white;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
+.status {
+  margin: 0.8rem 0 0;
+  min-height: 1.5rem;
+}
+
+code {
+  background: color-mix(in oklab, var(--panel), white 14%);
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.3rem;
+}
